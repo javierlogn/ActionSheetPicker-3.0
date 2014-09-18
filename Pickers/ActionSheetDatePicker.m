@@ -72,9 +72,12 @@
     datePicker.minimumDate = self.minimumDate;
     datePicker.minuteInterval = self.minuteInterval;
     datePicker.calendar = self.calendar;
-    datePicker.timeZone = self.timeZone;
+//    datePicker.timeZone = self.timeZone;
     datePicker.locale = self.locale;
-
+    [datePicker setTimeZone: [NSTimeZone timeZoneWithName:@"UTC"]];
+    
+    
+    
     [datePicker setDate:self.selectedDate animated:NO];
     [datePicker addTarget:self action:@selector(eventForDatePicker:) forControlEvents:UIControlEventValueChanged];
     
